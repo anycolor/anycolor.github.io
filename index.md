@@ -2,30 +2,7 @@
 layout: default2
 ---
 
-## never gonna give you up
+## 
 
-### 有时候让你生气
-
-是的，我是个非常傻逼的人儿。
-
-### 有时候你也比较喜欢我
-
-那么也是我的荣幸。
-
-### 我啰啰嗦嗦
-
-就是因为和你什么都想说。
-
-### 唉
-
-人生啊！
-
-### 唉
-
-希望你可以再让我亲亲。
-
-
-就这样
-
-<img src="images/555.jpg" alt="亲亲">
+### [weibo](http://weibo.com/u/3832109873?profile_ftype=1&is_all=1#_0)
 
