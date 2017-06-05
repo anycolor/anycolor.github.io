@@ -64,7 +64,7 @@ I hear them call me down
 
 I held you once, a love that once
 
-我抱过你一次，爱过你一次
+我抱过你一次，一次的爱
 
 Life had just begun and you're all I see
 
