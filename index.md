@@ -56,11 +56,11 @@ There is a sun
 
 It'll come, the sun
 
-就会出来的，太阳
+这个太阳，就会出来的
 
 I hear them call me down
 
-我听到他们叫我下去
+我听到他们叫我下去了
 
 I held you once, a love that once
 
