@@ -74,7 +74,7 @@ h3 {font-weight: normal}
     var data = {
         copy1: '♥collected&nbsp;',
         copy2: '☺',
-        cat: 'xwz.txt',
+        cat: 'oldmansea',
         frt: '点击开始!',
         bac: '',
         pre: '',
@@ -108,6 +108,7 @@ h3 {font-weight: normal}
                     this.xid=0;
                 else if (this.xid<0)
                     this.xid=themax;
+                //alert(this.xid);
                 var idx=(this.staronly)?this.stars[this.xid]:this.xid;
                 this.showme=false;
                 var kn=String(idx);
@@ -131,29 +132,34 @@ h3 {font-weight: normal}
             },
            Starlist: function(){
                 this.staronly=!this.staronly;
+                //跳转思路：转到收藏夹，如果有，从0开始，没有修改显示；转回全部，如果没有，恢复显示，如果有，跳到收藏夹正在看的位置
                 if (this.staronly){
-                var lst='';
-                var res=store.search(this.pre + "-star-");
-                this.stars=new Array();
-                for (var key in res){
-                    lst=lst + ddd[Number(key.split("-")[2])].frt + ' ';
-                    this.stars.push(Number(key.split("-")[2]));
+                    var res=store.search(this.pre + "-star-");
+                    this.stars=new Array();
+                    for (var key in res){
+                        this.stars.push(Number(key.split("-")[2]));
                     }
-                if (this.stars.length==0){
-                    this.frt='no colletion yet!';
-                    this.bac='';
-                    }else{
                     this.stars=unique(this.stars);
-                    //jump to 0
-                    this.xid=-1;
-                    this.Fresh('next');                
+                    if (this.stars.length==0){
+                        this.frt='no colletion yet!';
+                        this.bac='';
+                        }else{
+                        //jump to 0
+                        this.xid=-1;
+                        this.Fresh('next');                
                     }
                 }
                 else{
+                    if (this.stars.length==0){
+                    this.xid=this.xid-1;
+                    this.Fresh('next');
+                    }
+                    else{
                     //jump to where it used to be
                     var ik=this.stars[this.xid]
                     this.xid=(!isNaN(ik))?ik-1:-1;
                     this.Fresh('next');
+                    }
                 }
            },
            Reload: function(){
@@ -190,7 +196,7 @@ h3 {font-weight: normal}
     vue.$watch('xid',function(){
         //console.log("star change");
         var kx=(this.staronly)?this.stars[this.xid]:this.xid;
-        store(this.pre + "-lastxid",String(kx));
+        if (kx!=0){store(this.pre + "-lastxid",String(kx));}
     });
      //store.clear();
     </script>
