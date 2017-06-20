@@ -25,6 +25,33 @@ h3 {font-weight: normal}
         <h3><label  v-show="username.substr(0,1)!='{'" v-html="frt" v-on:click="if (!showme)showme=true;else Fresh('next');"></label></h3>
         <!--back-->
         <h3 v-show="showme && bac!=''">
+<html>
+<head>
+<meta charset='utf-8' />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Cards v0.621</title>
+<style type="text/css">
+h2 {font-weight: normal}
+h3 {font-weight: normal}
+</style>
+<script src="/assets/vue.min.js"></script>
+<script src="/assets/d3.min.js"></script>
+<script src="/assets/cookie.js"></script>
+<script src="/assets/store.min.js"></script>
+</head>
+<body>
+<div id="app">
+        <!--welcome-->
+        <div style='color:rgb(200,200,200);text-align:center' v-show="username.substr(0,1)!='{'">hello {{username}}</div>
+        <div style='color:rgb(200,200,200);text-align:center' v-show="username.substr(0,1)=='{'">hello guest, to use the flashcards, please copy <br /><input size="100" readonly="readonly" v-model='username' /><br /> and send it to weixinid:igacc.<br /></div>
+        <!--navbar-->
+        <h3 style="float:right"><span v-if="starred" v-on:click="starred=!starred"> ヽ(｀⌒´)ノ</span>
+        <span style="float:right;" v-on:click="starred=!starred" v-else> ( •̀ ᴗ •́ ) </span><br /></h3>        
+        <h3><span v-on:click="Fresh('prev')">&lt;&lt;</span><input type="text" size="5" v-model="xid" v-on:input="Fresh('curr')" /><span v-on:click="Fresh('next')">&gt;&gt;</span>
+        <!--front--></h3>
+        <h3><label  v-show="username.substr(0,1)!='{'" v-html="frt" v-on:click="if (!showme)showme=true;else Fresh('next');"></label></h3>
+        <!--back-->
+        <h3 v-show="showme && bac!=''">
         <s><span v-if="skipped" v-html="bac" v-on:click="Fresh('rand')"></span></s>
         <span v-if="!skipped" v-html="bac" v-on:click="Fresh('rand')"></span>
         </h3>
@@ -97,7 +124,6 @@ h3 {font-weight: normal}
         methods: {
             Fresh: function (action) {
                 // `this` 在方法里指当前 Vue 实例
-                //alert('Next ' + this.frt + '!');
                 var themax=(this.staronly)?this.stars.length-1:ddd.length-1;
                 if (action=='next')
                     this.xid++;
@@ -123,6 +149,82 @@ h3 {font-weight: normal}
            },
            Update: function(){
                 var idx=(this.staronly)?this.stars[this.xid]:this.xid;
+                var kn=String(idx);
+                if (this.starred) store(this.pre + "-star-" + kn,"ok"); else store(this.pre + "-star-" + kn,false);
+                if (this.skipped) store(this.pre + "-skip-" + kn,"ok"); else store(this.pre + "-skip-" + kn,false);
+                store(this.pre + "-coun-" + kn,String(this.count));
+                //console.log("this.count:" + this.count);
+
+            },
+           Starlist: function(){
+                this.staronly=!this.staronly;
+                if (this.staronly){
+                var lst='';
+                var res=store.search(this.pre + "-star-");
+                this.stars=new Array();
+                for (var key in res){
+                    lst=lst + ddd[Number(key.split("-")[2])].frt + ' ';
+                    this.stars.push(Number(key.split("-")[2]));
+                }
+                if (this.stars.length==0){
+                this.frt='no colletion yet!';
+                this.bac='';
+                }else{
+                this.stars=unique(this.stars);
+                //jump to 0
+                this.xid=-1;
+                this.Fresh('next');                
+                }
+                }
+                else{
+                //jump to where it used to be
+                var ik=this.stars[this.xid]
+                this.xid=(!isNaN(ik))?ik-1:-1;
+                this.Fresh('next');
+                }
+           },
+           Reload: function(){
+                this.username=user();
+                d3.csv(this.cat, function(dd) {
+                    ddd=dd;
+                    //after loading table
+                    var tk=Number(store(data.pre));
+                    data.xid=(!isNaN(tk))?tk-1:-1;
+                    vue.Fresh('next');
+                    });
+                this.pre=this.cat.split(".")[0];
+                this.showfc=false;
+           },
+        }
+    });
+    vue.$watch('ck', function () {
+        //this.frt=this.xxx[0].front;
+        //执行其他代码
+        this.Reload();
+    });
+    vue.$watch('count',function(){
+        //console.log("count change");
+        this.Update();
+    });
+    vue.$watch('skipped',function(){
+        //console.log("skip change");
+        this.Update();
+    });
+    vue.$watch('starred',function(){
+        //console.log("star change");
+        this.Update();
+    });
+    vue.$watch('xid',function(){
+        //console.log("star change");
+        var kx=(this.staronly)?this.stars[this.xid]:this.xid;
+        store(this.pre + "-lastxid",String(kx));
+    });
+     //store.clear();
+    </script>
+<div style="display:none;"><script src="https://s4.cnzz.com/z_stat.php?id=1257422626&web_id=1257422626" language="JavaScript"></script></div>
+</body>
+</html>
+
                 var kn=String(idx);
                 if (this.starred) store(this.pre + "-star-" + kn,"ok"); else store(this.pre + "-star-" + kn,false);
                 if (this.skipped) store(this.pre + "-skip-" + kn,"ok"); else store(this.pre + "-skip-" + kn,false);
