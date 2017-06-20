@@ -72,8 +72,8 @@ h3 {font-weight: normal}
     d3.csv("/assets/allowed.txt", function(cc) {data.ck=cc;});
     //Model
     var data = {
-        copy1: '♡collected&nbsp;',
-        copy2: '☻',
+        copy1: '♥collected&nbsp;',
+        copy2: '☺',
         cat: 'xwz.txt',
         frt: '点击开始!',
         bac: '',
@@ -156,7 +156,7 @@ h3 {font-weight: normal}
                 d3.csv(this.cat, function(dd) {
                     ddd=dd;
                     //after loading table
-                    data.xid=(store(data.pre + "-lastxid"))?store(data.pre + "-lastxid")-1:-1;
+                    data.xid=(store.has(data.pre + "-lastxid"))?store(data.pre + "-lastxid")-1:-1;
                     vue.Fresh('next');
                     });
                 this.pre=this.cat.split(".")[0];
