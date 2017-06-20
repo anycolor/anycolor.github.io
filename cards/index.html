@@ -138,35 +138,35 @@ h3 {font-weight: normal}
                 for (var key in res){
                     lst=lst + ddd[Number(key.split("-")[2])].frt + ' ';
                     this.stars.push(Number(key.split("-")[2]));
-                }
+                    }
                 if (this.stars.length==0){
-                this.frt='no colletion yet!';
-                this.bac='';
-                }else{
-                this.stars=unique(this.stars);
-                //jump to 0
-                this.xid=-1;
-                this.Fresh('next');                
-                }
+                    this.frt='no colletion yet!';
+                    this.bac='';
+                    }else{
+                    this.stars=unique(this.stars);
+                    //jump to 0
+                    this.xid=-1;
+                    this.Fresh('next');                
+                    }
                 }
                 else{
-                //jump to where it used to be
-                var ik=this.stars[this.xid]
-                this.xid=(!isNaN(ik))?ik-1:-1;
-                this.Fresh('next');
+                    //jump to where it used to be
+                    var ik=this.stars[this.xid]
+                    this.xid=(!isNaN(ik))?ik-1:-1;
+                    this.Fresh('next');
                 }
            },
            Reload: function(){
                 this.username=user();
+                this.pre=this.cat.split(".")[0];
+                this.showfc=false;
                 d3.csv(this.cat, function(dd) {
                     ddd=dd;
                     //after loading table
-                    var tk=Number(store(data.pre));
+                    var tk=Number(store(data.pre + "-lastxid"));
                     data.xid=(!isNaN(tk))?tk-1:-1;
                     vue.Fresh('next');
                     });
-                this.pre=this.cat.split(".")[0];
-                this.showfc=false;
            },
         }
     });
