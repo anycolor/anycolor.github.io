@@ -197,6 +197,7 @@ h3 {font-weight: normal}
                 window.location.hash="#" + this.cat;
                 hash=this.cat; 
                 }
+                this.cat='';
                 this.pre=hash.split(".")[0];
                 document.title=this.pre;
                 d3.csv(hash + ".txt",function(dd) {
