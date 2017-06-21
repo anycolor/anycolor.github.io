@@ -38,7 +38,7 @@ h3 {font-weight: normal}
         <span v-once v-html="copy1" v-else v-on:click="Starlist()"></span>
         <span v-once v-html="copy2" v-on:click="showfc=!showfc"></span>
         </p>
-        <p style="text-align:center" v-show="showfc"><input type="text" size=10 v-model="cat" v-on:keyup.enter="Reload()"/></p>
+        <p style="text-align:center" v-show="showfc"><input type="text" size=10 v-model="cat" v-on:keyup.enter="window.location.hash='#' + cat;"/></p>
     </div>
     <script type="text/javascript">
     function rang(min,max){
@@ -68,6 +68,9 @@ h3 {font-weight: normal}
             //return "guest";        
             return dv;        
     }
+    window.onhashchange=function(){  
+            vue.Reload();
+        };
     var ddd;
     d3.csv("/assets/allowed.txt", function(cc) {data.ck=cc;});
     //Model
@@ -164,9 +167,14 @@ h3 {font-weight: normal}
            },
            Reload: function(){
                 this.username=user();
-                this.pre=this.cat.split(".")[0];
                 this.showfc=false;
-                d3.csv(this.cat, function(dd) {
+                var hash=window.location.hash.substr(1);
+                if (hash==""){
+                window.location.hash="#" + this.cat;
+                hash=this.cat; 
+                }
+                this.pre=hash.split(".")[0];
+                d3.csv(hash, function(dd) {
                     ddd=dd;
                     //after loading table
                     var tk=Number(store(data.pre + "-lastxid"));
