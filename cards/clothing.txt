@@ -1,5 +1,5 @@
 ﻿front,back
-<h1><span style='text-align:right'>{{front}}</span></h1>,<h1><span style='text-align:right'>{{back}}</span></h1>
+<h1 style='text-align:center'>{{front}}</h1>,<h1 style='font-weight: normal;text-align:center;'>{{back}}</h1>
 “J” SHAPED POCKET,J形袋
 24L BUTTON,24号钮
 6 FEED PIQUE,6模珠地
@@ -73,7 +73,7 @@ BUNDLE CODE,扎号
 BUNDLING,执扎
 BUTTON,钮扣
 BUTTON STAND,钮门搭位
-BUTTON-HOLE 钮门 /,扣眼
+BUTTON-HOLE ,钮门/扣眼
 BUTTON-HOLING,开钮门
 BUTTONING,钉钮
 BUTTONING WITH BUTTON SEWER,用钉钮机钉钮
