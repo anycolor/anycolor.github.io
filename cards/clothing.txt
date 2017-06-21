@@ -1,0 +1,387 @@
+﻿front,back
+<h1><span style='text-align:right'>{{front}}</span></h1>,<h1><span style='text-align:right'>{{back}}</span></h1>
+“J” SHAPED POCKET,J形袋
+24L BUTTON,24号钮
+6 FEED PIQUE,6模珠地
+ACCESSORY,辅料
+BACK ACROSS,后背宽
+ACROSS MEASURE,横量
+ACRYLIC,腈纶
+ADHESIVE / FUSIBLE INTERLINING,粘衬
+ANTIQUE BRASS COATING,镀青古铜
+ANTISTATIC FINISH,防静电处理
+APPAREL,成衣
+APPEALING LOOK,吸引人的外表
+APPROVAL SAMPLE,批办
+APPROVED SAMPLE WITH SIGNING NAME,签名批办
+ARMHOLE,夹圈
+ASSEMBLING OF FRONT &#38; BACK PART,前后幅合并
+ASSEMBLING SECTION,合并部分
+ATTACH COLLAR,上领
+ATTACH LABEL,上商标
+ATTACHMENT,（车缝）附件
+BACK COVER FRONT,后搭前
+BACK MID-ARMHOLE,后背宽
+BACK STITCH,返针，回针
+BACKLESS DRESS,露背装
+BAR CODED STICKER,条形码贴纸
+BARGAINING,讨价还价
+BAR-TACK,打枣
+BASTE,假缝
+BATILK,蜡染
+BEARER,袋衬
+BEARER &#38; FACING,袋衬袋贴
+BEDFORD CORD.,坑纹布，经条灯心绒
+BELL BOTTOM,喇叭裤脚
+BELLOWS POCKET,风琴袋
+BELT,腰带
+BELT-LOOP,裤耳
+BIAS CUT,斜纹裁，纵纹裁
+BIFURCATE,分叉
+BINDER,包边蝴蝶，滚边蝴蝶
+BINDING,包边
+BINDING OF SLV. OPENING,R折
+BINDING OF TOP VENT,面叉包边
+BINDING TAPE,包边
+BINDING/BOUND,滚条
+BLANKET,毛毯，地毯
+BLEACH,漂白
+BLEACH SPOT,漂白污渍
+BLEEDING,洗水后褪色
+BLEND FIBRE,混纺纤维
+BLENDS,混纺
+BLIND STITCH,挑脚线步
+BLOUSE,女装衬衫
+BODY PRESSING,衫身熨烫
+BODY RISE,直浪
+BOTTOM,衫脚，下摆
+BOTTOM VENT OF SLEEVE,细侧
+BOTTOMS,下装
+BOX-PLEATED,外工字褶
+BOY'S STYLE FLY / LEFT FLY,男装钮牌，左钮牌
+BRAID,织锦，织带
+BRANCH,分公司
+BREAK STITCHES,断线
+BRIEFS,男装紧身内裤
+BROCADE,织锦，织带
+BROKEN STITCHING,断线
+BUBBLING,起泡
+BUCKLE,皮带扣
+BUCKLE-LOOP,皮带扣
+BULK PRODUCTION,大量生产
+BUNDLE CODE,扎号
+BUNDLING,执扎
+BUTTON,钮扣
+BUTTON STAND,钮门搭位
+BUTTON-HOLE 钮门 /,扣眼
+BUTTON-HOLING,开钮门
+BUTTONING,钉钮
+BUTTONING WITH BUTTON SEWER,用钉钮机钉钮
+C/B VENT,后中叉
+CALICO / GRAY CLOTHES,胚布
+CANVAS,马尾衬，帆布
+CARDBOARD,纸板
+CARDED,粗疏
+CARE LABEL,洗水唛
+CARTONNING,装箱，入箱
+CASE PACK LABEL,外箱贴纸
+CASH POCKET,表袋
+CASUAL WEAR,便装
+CATCHING FACING,钮子
+CENTER BACK,后中
+CENTER CREASE FOLD,中骨对折
+CENTER CREASE LINE,中骨线
+CENTER FRONT,前中
+CERTIFIED SUB-CONTRACTOR,认可加工厂
+CHAIN STITCH M/C,锁链车
+CHAIN STITCHES,锁链线步
+CHAMPRAY,皱布
+CHEMISE,宽松服装
+CHEST/BUST,胸围
+CHIC,时髦的，流行的
+CIRCULAR KNIT,圆筒针织布
+CLASSIC LOOK,经典款式
+CLASSIFICATION,分类
+CLEAN FINISH,还口
+CLEAN FINISH OF TOP VENT,面叉还口
+CLEAN FINISH WITH 1/4&#34; SINGLE NEEDLE 1/4&#34;,单针还口
+CLOSE FITTING,贴身
+CLOSE SIDE SEAM,埋侧骨
+COATING,外套大衣
+COIN POCKET,表袋
+COLLAR,领子
+COLLAR BAND,下级领
+COLLAR FALL,上级领
+COLLAR NOTCH,领扼位
+COLLAR POINT,领尖
+COLLAR STAND,下级领
+COLLAR STAY,领插竹
+COLLECTION,系列
+COLOR SHADING,色差
+COMBED,精梳
+CONSTRUCTED SPECIFICATION,结构细节
+CONTINUOUS PLACKET,R折
+CONTROL OF LABOR TURNOVER,劳工流失控制
+CORDUROY,灯心绒
+COST SHEET,成本单
+COTTON STRING,棉绳
+COVERING STITCHING,拉冚线步（600类）
+CREASE &#38; WRINKLY RESISTANT FINISH,防皱处理
+CREASE LINE,折线
+CREPE DE-CHINE,皱布
+CROSS CROTCH,十字缝
+CROSS CUT,横纹裁
+CROTCH POINT,浪顶点
+CTN. NO.,箱号
+CUFF,鸡英，介英
+CUFF ATTACHING TO SLEEVE,车鸡英到袖子上
+CUFF VENT/CUFF OPENING,袖侧
+CUFFED BOTTOM HEM,反脚，假反脚，脚级
+CUFFLESS BOTTOM,平脚
+CURVED POCKET,弯袋
+CUT &#38; SEWN,切驳
+CUTTING PIECE,裁片
+CUTTING PIECE NUMBERING,给裁片编号
+D.K. JACQUARD,双面提花（针织）
+DAMAGE CAUSED BY NEEDLE,针孔
+DECORATIVE STITCHING,装饰间线
+DELIVERY DATE,落货期
+DENIER,旦尼尔
+DENIM,牛仔
+DENSITY,密度
+DESIGN SKETCH,设计图
+DESIGNED FEATURE,设计特征
+DIMENSION,尺寸、尺码
+DINNER JACKET,晚礼服
+DIRT STAINS AFTER WASHING,洗水后有污迹
+DIRTY SPOT,污点
+DISCOUNT / SALES OFF,打折
+DOBBY,织花布
+DOUBLE CUFF,双层鸡英
+DOUBLE END,双经
+DOUBLE JETTED POCKET,双唇袋
+DOUBLE NEEDLE FELL SEAM,双针埋夹
+DOUBLE PICK,双纬
+DOUBLING,并线
+DRESS COAT,礼服
+DRESSING ROOM,试衣间
+DRILLING,钻孔位
+DRY-CLEANED,干洗
+DUCK,帆布
+DYING,染色
+EASING,容位
+EDGE STITCHING,间边线
+EDGE TRIMMER,修边器
+EDGE-FINISHING,边脚处理
+EDGE-STITCH DART,边线褶
+EDGE-STITCHING W/ 1/16&#34;,宽1/16&#34;的边线
+ELASTIC,橡筋
+ELASTIC WAISTBAND IS EXTENSION OF BODY,原身出橡筋裤头
+ELBOW WIDTH,肘宽
+EMBROIDERY PATCH,绣花章
+EPAULET,肩章
+EVENING GOWN SET,晚睡袍
+EXCELLENT STYLE,漂亮的款式
+EXCESSIVE THREAD ENDS,多余的线头
+EXECUTIVE WEAR,行政装
+EXPIRY DATE,有效期
+EXPORT CARTON,出口箱
+EXTENSION OF WAISTBAND,裤头搭咀
+EYELET,凤眼
+FABRIC,布料
+FABRIC CONSTRUCTION,布料结构
+FABRIC DEFECTS,布疵
+FABRIC RUNS,走纱
+FABRIC SHADING,布料色差
+FABRIC SWATCH,布办
+FABRIC WIDTH,布封
+FABRICATION / FABRIC,布料
+FACING,贴
+FACING TO OUT-SIDE,折向侧骨
+FALSE FLY,暗钮牌
+FALSE PLACKET,假明筒，假反筒
+FASHION,时装
+FELL SEAM,埋夹
+FIGURE-CLINGING,紧身的，贴身胸围
+FILAMENT,长纤丝
+FINAL APPEARANCE,最终外观
+FINISHED APPEARANCE,完成后的外观
+FITTING,试身
+FLAMEPROOF FABRIC,防火布
+FLANNEL,法兰绒
+FLARE SKIRT,喇叭裙
+FLAT MACHINE,平车
+FLAT SEAM,平缝
+FLAX,亚麻
+FLOW CHART,流程图
+FOLD AND PACK,折叠包装，折装
+FOLD BACK FACING,原身出贴
+FOLD BACK HIDDEN PLACKET,原身双层钮筒
+FOLD FRONT EDGE,折前幅边
+FOLD LINE,折线
+FOLD PANTS,折裤子
+FOLD POCKET MOUTH,折反袋口
+FORM AND FOLD GARMENT,定型折衫
+FROCKS,礼服
+FRONT EDGE,前幅边
+FRONT MID-ARMHOLE,前胸宽
+FRONT OPENING,前开口
+FRONT PANEL,前幅
+FULLY FASHION SWEATER,全成型毛衫
+FULLY OPENING,全开口
+FUR,皮草
+FUR GARMENT,裘皮服装
+FURRY,毛皮制品
+FUSE INTERLINING,粘衬
+FUSIBLE INTERLINING,粘朴
+FUZZ BALLS,起球
+GABARDINE,斜纹呢
+GARMENT,成衣
+GARMENT DYE,成衣染色
+GARMENT FINISH,成衣后处理
+GARMENT SEWING TECHNOLOGY,成衣工艺
+GARMENT WASH,成衣洗水，普洗
+GATHERING,碎褶
+GIRL'S STYLE FLY / RIGHT FLY,女装钮牌，右钮牌
+GLACED FINISH,压光加工
+GOOD TASTE,高品味
+GR. WT.=GROSS WEIGHT,毛重
+GRADING,放码
+GRAIN,布纹
+GRAY CLOTH,胚布
+GROMMET,凤眼
+GROWN-ON SLEEVE,原身出袖
+machine maintenance,机械保养
+main label，brand label,主唛
+man-made fibre,人造纤维
+manufacturer,制造商，厂商
+mark button &#38;amp; buttonhole position,标出钮扣与扣眼的位置，[粤]点钮位和钮门位
+mark pocket position with template,用纸板点袋位
+marker,排料图，[粤]唛架
+marker laying,排料，[粤]排唛架
+mass production,大规模生产
+match color,配色
+material,材料，布料，物料
+measurement,尺寸
+measurement allowance,尺寸允许公差
+measurement discrepancy,尺寸差异
+measurement tape，measuring tape，tailor&#38;#39;s tape,软尺，皮尺
+medium size,中号，中码
+melton,麦尔登（粗纺呢绒），[粤]领底绒
+merchandiser,跟单员
+mesh,网眼，网眼布
+mini marker,小唛架（可用来估算用料）
+mock,（企）领
+mock buttonhole，decoration buttonhole,假扣眼，[粤]假钮门
+mock fly,假门襟
+moth resistant finish,防虫处理
+mould charge，mould cost,开板费（如胶章/拉链头等）
+nail-button,钉脚钮扣
+natural fibre,天然纤维
+neck dart,领省，[粤]领褶
+neck,领圈，[粤]颈圈
+needle detector,验针机
+net weight,净重
+knitdowns,针/毛织片小样
+non-fusible interlining,非粘衬，[粤]生朴
+non-woven fabric,无纺布
+normal machine,平车
+notch,领嘴，剪口，刀口，[粤]扼位
+numbering,打编号，[粤]打啉号
+off pressing,终烫
+off size,尺码不全
+on board,上船
+on sale,换季
+one layer yoke,单层过肩，[粤]单层担干
+two-button cuff,双扣袖头，[粤]双钮鸡英
+open seam,开骨
+opening,开口
+operation break down,分工序，[粤]分科
+organic cotton,有机棉
+out of season,过季的
+outseam,侧缝，[粤]侧骨
+overalls,工作服，背带工装裤
+overhead,企业一般管理费用，[粤]厂皮
+overlap,重叠，[粤]搭位
+overlocking，serging,拷边，锁边，包缝，撬边&#44;[粤]钑骨
+merrow,=overlocking。Merrow是以前美国一个很出名的拷边机制造商，美国人就把merrow等同于拷边了。
+overlock &#38;amp; blind stitch,拷边并挑脚，[粤]钑骨并挑脚
+overtime working,加班工作
+packing list,包装单
+packing method,包装方法
+pants,[美]裤子，（女、童）紧身短衬裤，[英]男短衬裤，紧身长衬裤
+paper pattern,纸样
+paper shirt band,纸领条（衬衫包装时放在领圈里面以固定领形）
+peached finish,磨毛处理
+permanent label,耐久性标签
+piece dye,匹染
+piece goods,布匹
+piece rate,记件
+piece yardage,件耗，每件衣服所用面料的码数
+pin,大头针
+piping,嵌边，滚条
+piper,滚边器，[粤]滚边蝴蝶
+pique,单珠地（一种针织面料）
+placket,门襟，[粤]门筒
+checks，plaids,格子布，[粤]格仔布
+plaids matching，checks matching,对格
+planning board,经济排唛
+plant layout,厂房布置
+plastic butterfly,胶托，[粤]胶蝴蝶（衬衫包装时放在领口处以固定领形）
+plastic clip,胶夹
+plastic collar support，plastic shirt band,胶领圈，胶领条（衬衫包装时放在领座外面以固定领形）
+plastic ring for reinforcement,（揿钮后面）要有胶圈加固
+plastic string,胶针
+pleat,褶，活褶，[粤]生褶
+pocket bearer,袋衬
+pocket facing,袋贴
+pocket flap,袋盖
+pocket opening,袋口
+pocketbag，pocket-bag,（裁好的）袋布
+pocketing,（成卷的）袋布
+pointed shape belt loop,三尖裤耳
+pola data sheet,吓数纸
+polybag,胶袋
+polybag sticker,胶袋贴纸
+polyurethane,PU革
+port of discharge,卸运港
+port of loading,装运港
+pre-shrinking,预缩
+pre-ticket,有些客人的价格牌是需要收货后再挂的，但是又需要在衣服上先作标识，所以就要求供货商在衣服上挂pre-ticket，可称为预价格牌或者预吊牌。
+pressing cloth,水布（熨烫服装时覆盖在上面的布）
+previous shipment,以前出的货，以前走的货
+price ticket,价钱牌
+princess seam,公主线缝骨，[粤]公主褶
+printing,印花
+probation pass letter,试用期通过信
+production pattern,生产纸样
+production schedule,生产排期
+production status,生产情况
+puckering,起皱
+QC sticker,箭头纸，QC贴纸，[粤]鸡纸
+quilting,绗缝，绗棉，[粤]间棉，打缆
+[英]quires=[美]question/inquire,问题，疑问
+ratio,装箱配比（按颜色、尺码等）
+rag,碎布，布碎
+raglan sleeve,连肩袖，插肩袖，[粤]牛角袖
+raised collar pack,企领装
+rayon,人造丝
+ready-to-wear,成衣
+regenerated fibre,再生纤维
+remnant,布尾，零码布
+resin finish,树脂处理
+reverse side,反面
+re-washing,返洗
+rhinestone，（Rhin stone，Rhine stone）,人造钻石
+rib bottom,罗纹下摆
+rib stop,暗格子布
+rib,罗纹
+ribbon,缎带，丝带
+rivet,撞钉，柳钉
+RN No.=Registered identification Number,北美公司注册号
+roll,卷，匹，疋
+rotary knife,圆刀式电剪
+round bottom,圆下摆
+round corner cuff,圆角袖头，[粤]圆角鸡英
+round corner extension,圆形裤头搭咀
+ruffles,褶边，皱褶，[粤]荷叶边
