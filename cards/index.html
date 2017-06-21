@@ -77,7 +77,7 @@ h3 {font-weight: normal}
     var data = {
         copy1: '♥collected&nbsp;',
         copy2: '☺',
-        cat: 'oldmansea',
+        cat: 'little-prince',
         frt: '点击开始!',
         bac: '',
         pre: '',
@@ -174,7 +174,8 @@ h3 {font-weight: normal}
                 hash=this.cat; 
                 }
                 this.pre=hash.split(".")[0];
-                d3.csv(hash, function(dd) {
+                document.title=this.pre;
+                d3.csv(hash + ".txt",function(dd) {
                     ddd=dd;
                     //after loading table
                     var tk=Number(store(data.pre + "-lastxid"));
