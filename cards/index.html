@@ -83,7 +83,7 @@ h3 {font-weight: normal}
         pre: '',
         showme: true,
         showfc: false,
-        xid: -1,
+        xid: 0,
         ck:null,
         username:'{Loading service}',
         starred:false,
@@ -99,17 +99,17 @@ h3 {font-weight: normal}
         data: data,
         methods: {
             Fresh: function (action) {
-                // `this` 在方法里指当前 Vue 实例
+                this.showme=false;
                 var themax=(this.staronly)?this.stars.length-1:ddd.length-1;
                 if (action=='next')
                     this.xid++;
                 else if (action=='prev')
                     this.xid--;
                 else if (action=='rand')
-                    this.xid=rang(0,themax);
+                    this.xid=rang(1,themax);
                 if (this.xid>themax)
-                    this.xid=0;
-                else if (this.xid<0)
+                    this.xid=1;
+                else if (this.xid<1)
                     this.xid=themax;
                 //alert(this.xid);
                 var idx=(this.staronly)?this.stars[this.xid]:this.xid;
@@ -120,9 +120,33 @@ h3 {font-weight: normal}
                 this.count=Number(kcount)+1;
                 this.starred=(store.has(this.pre + "-star-" + kn));
                 this.skipped=(store.has(this.pre + "-skip-" + kn));
-                this.frt=ddd[idx].front;
-                this.bac=ddd[idx].back + '<span style="color:rgb(230,230,230)">(' + this.count + ")</span>";
-                this.showme=false;
+                //根据ddd[0]的模板，设定FRT与BAC，要求必须有front back字段
+                var fxt;
+                fxt=ddd[0].back;
+                var argx=fxt.split("{{");
+                for (var i=0;i<argx.length;i++){
+                    argx[i]=argx[i].split("}}")[0];
+                    if (argx[i]=="count"){
+                    fxt=fxt.replace("{{" + argx[i] + "}}",String(this[argx[i]]));
+                    }
+                    else{       
+                    fxt=fxt.replace("{{" + argx[i] + "}}",ddd[idx][argx[i]]);
+                    //console.log("idx " + idx + "arg" + argx[i] + "ddd" + ddd[idx][argx[i]]);
+                    }
+                }
+                this.bac=fxt;
+                fxt=ddd[0].front;
+                var argx=fxt.split("{{");
+                for (var i=0;i<argx.length;i++){
+                    argx[i]=argx[i].split("}}")[0];
+                    if (argx[i]=="count"){
+                    fxt=fxt.replace("{{" + argx[i] + "}}",String(this[argx[i]]));
+                    }
+                    else{       
+                    fxt=fxt.replace("{{" + argx[i] + "}}",ddd[idx][argx[i]]);
+                    }
+                }
+                this.frt=fxt;
            },
            Update: function(){
                 var idx=(this.staronly)?this.stars[this.xid]:this.xid;
@@ -148,7 +172,7 @@ h3 {font-weight: normal}
                         this.bac='';
                         }else{
                         //jump to 0
-                        this.xid=-1;
+                        this.xid=0;
                         this.Fresh('next');                
                     }
                 }
@@ -160,7 +184,7 @@ h3 {font-weight: normal}
                     else{
                     //jump to where it used to be
                     var ik=this.stars[this.xid]
-                    this.xid=(!isNaN(ik))?ik-1:-1;
+                    this.xid=(!isNaN(ik))?ik-1:0;
                     this.Fresh('next');
                     }
                 }
@@ -179,7 +203,7 @@ h3 {font-weight: normal}
                     ddd=dd;
                     //after loading table
                     var tk=Number(store(data.pre + "-lastxid"));
-                    data.xid=(!isNaN(tk))?tk-1:-1;
+                    data.xid=(!isNaN(tk))?tk-1:0;
                     vue.Fresh('next');
                     });
            },
