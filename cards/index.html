@@ -14,32 +14,32 @@ h3 {font-weight: normal}
 </head>
 <body>
 <div id="app">
-        <!--welcome-->
-        <div style='color:rgb(200,200,200);text-align:center' v-show="username.substr(0,1)!='{'">hello {{username}}</div>
-        <div style='color:rgb(200,200,200);text-align:center' v-show="username.substr(0,1)=='{'">hello guest, to use the flashcards, please copy <br /><input size="100" readonly="readonly" v-model='username' /><br /> and send it to weixinid:igacc.<br /></div>
-        <!--navbar-->
-        <h3 style="float:right"><span v-if="starred" v-on:click="starred=!starred"> ヽ(｀⌒´)ノ</span>
-        <span style="float:right;" v-on:click="starred=!starred" v-else> ( •̀ ᴗ •́ ) </span><br /></h3>        
-        <h3><span v-on:click="Fresh('prev')">&lt;&lt;</span><input type="text" size="5" v-model="xid" v-on:input="Fresh('curr')" /><span v-on:click="Fresh('next')">&gt;&gt;</span>
-        <!--front--></h3>
-        <h3><label  v-show="username.substr(0,1)!='{'" v-html="frt" v-on:click="if (!showme)showme=true;else Fresh('next');"></label></h3>
-        <!--back-->
-        <h3 v-show="showme && bac!=''">
-        <s><span v-if="skipped" v-html="bac" v-on:click="Fresh('next')"></span></s>
-        <span v-if="!skipped" v-html="bac" v-on:click="Fresh('next')"></span>
-        </h3>
-        <!--setting-->               
-        <h3 style="display:none">
-        <span v-if="skipped" v-on:click="skipped=!skipped">skipped</span>
-        <span v-on:click="skipped=!skipped" v-else>skip</span> 
-        </h3>
-        <p style='color:rgb(200,200,200);text-align:center'>
-        <span v-once v-html="copy1" v-if="staronly" style='color:rgb(200,155,155)' v-on:click="Starlist()"></span>
-        <span v-once v-html="copy1" v-else v-on:click="Starlist()"></span>
-        <span v-once v-html="copy2" v-on:click="showfc=!showfc"></span>
-        </p>
-        <p style="text-align:center" v-show="showfc"><input type="text" size=10 v-model="cat" v-on:keyup.enter="window.location.hash='#' + cat;"/></p>
-    </div>
+    <!--welcome-->
+    <div style='color:rgb(200,200,200);text-align:center' v-show="username.substr(0,1)!='{'">hello {{username}}</div>
+    <div style='color:rgb(200,200,200);text-align:center' v-show="username.substr(0,1)=='{'">hello guest, to use the flashcards, please copy <br /><input size="100" readonly="readonly" v-model='username' /><br /> and send it to weixinid:igacc.<br /></div>
+    <!--navbar-->
+    <h3 style="float:right"><span v-if="starred" v-on:click="starred=!starred"> ヽ(｀⌒´)ノ</span>
+    <span style="float:right;" v-on:click="starred=!starred" v-else> ( •̀ ᴗ •́ ) </span><br /></h3>        
+    <h3><span v-on:click="Fresh('prev')">&lt;&lt;</span><input type="text" size="5" v-model="xid" v-on:input="Fresh('curr')" /><span v-on:click="Fresh('next')">&gt;&gt;</span>
+    <!--front--></h3>
+    <h3><label  v-show="username.substr(0,1)!='{'" v-html="frt" v-on:click="if (!showme)showme=true;else Fresh('next');"></label></h3>
+    <!--back-->
+    <h3 v-show="showme && bac!=''">
+    <s><span v-if="skipped" v-html="bac" v-on:click="Fresh('next')"></span></s>
+    <span v-if="!skipped" v-html="bac" v-on:click="Fresh('next')"></span>
+    </h3>
+    <!--setting-->               
+    <h3 style="display:none">
+    <span v-if="skipped" v-on:click="skipped=!skipped">skipped</span>
+    <span v-on:click="skipped=!skipped" v-else>skip</span> 
+    </h3>
+    <p style='color:rgb(200,200,200);text-align:center'>
+    <span v-once v-html="copy1" v-if="staronly" style='color:rgb(200,155,155)' v-on:click="Starlist()"></span>
+    <span v-once v-html="copy1" v-else v-on:click="Starlist()"></span>
+    <span v-once v-html="copy2" v-on:click="showfc=!showfc"></span>
+    </p>
+    <p style="text-align:center" v-show="showfc"><input type="text" size=10 v-model="cat" v-on:keyup.enter="window.location.hash='#' + cat;"/></p>
+</div>
     <script type="text/javascript">
     function rang(min,max){
         var cur=max-min+1;
@@ -77,7 +77,7 @@ h3 {font-weight: normal}
     var data = {
         copy1: '♥collected&nbsp;',
         copy2: '☺',
-        cat: 'little-prince',
+        cat: 'the-little-prince',
         frt: '点击开始!',
         bac: '',
         pre: '',
