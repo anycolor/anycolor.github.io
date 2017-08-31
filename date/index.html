@@ -45,7 +45,7 @@ a {color:rgb(246,246,248)}
 var title;
 reloadx();
 function reloadx(){
-    hash=window.location.hash.substr(1);
+    hash=decodeURI(window.location.hash.substr(1));
     document.getElementsByTagName("p")[1].style.display="none";
     document.getElementsByTagName("p")[2].style.display="none";
     document.getElementsByTagName("p")[3].style.display="none";
@@ -67,6 +67,7 @@ function reloadx(){
     title=hash.substr(64);
     //404
     if (bbase[title]==undefined){
+        console.log("err key",title);
         title="404";
         document.getElementsByTagName("p")[3].style.display="inline";
     }
@@ -95,12 +96,14 @@ function getdict(){
     return bdc.join("");
 }
 function generate(){
-    var txsr=document.getElementsByTagName("textarea")[0].value;
-    txsr=txsr.replace(/\n/g,"<br />");
-    var dct=document.getElementsByTagName("input")[0].value.split("");
+    var xcontent=document.getElementsByTagName("textarea")[0].value;
+    xcontent=xcontent.replace(/\n/g,"<br />");
+    var xdict=document.getElementsByTagName("input")[0].value.split("");
     var hsh="#"+document.getElementsByTagName("input")[0].value+document.getElementsByTagName("input")[1].value;
     var hsh0="#"+document.getElementsByTagName("input")[1].value;
-    document.getElementsByTagName("textarea")[1].innerHTML='"'+document.getElementsByTagName("input")[1].value+'":"'+Base64.encode(txsr,dct)+'",\n';
+    console.log(Base64.encode(xcontent,xdict));
+    console.log('"'+document.getElementsByTagName("input")[1].value+'":"'+Base64.encode(xcontent,xdict)+'",\n');
+    document.getElementsByTagName("textarea")[1].value='"'+document.getElementsByTagName("input")[1].value+'":"'+Base64.encode(xcontent,xdict)+'",\n';
     document.getElementsByTagName("a")[0].innerHTML=hsh;
     document.getElementsByTagName("a")[0].href=hsh;
     document.getElementsByTagName("a")[1].innerHTML=hsh0;
