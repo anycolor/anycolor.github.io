@@ -17,16 +17,13 @@ td {text-align:center}
 <div>
 <h2></h2>
 <p></p>
-<p></p>
 </div>
 <script type="text/javascript">
 hash=window.location.hash.substr(1);
 dict=hash.substr(0,64).split("");
 title=hash.substr(64);
 document.title=title;
-var b64d
-console.group('Test Base64: ');
-//var b64 = Base64.encode();
+document.getElementsByTagName("h2")[0].innerHTML=title;
 document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict));
 </script>
 </div>
