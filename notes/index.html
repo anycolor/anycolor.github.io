@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'unsafe-eval' 'self' *.ctt.li localhost *.cnzz.com">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<script src="bb64.js"></script>
+<title>ctt.li</title>
+<style type="text/css">
+body{background-color:rgb(12,16,33);color:rgb(246,246,248);line-height:150%;}
+h1 {text-align:center}
+h2 {font-weight:normal}
+h3 {font-weight:normal}
+td {text-align:center}
+</style>
+</head>
+<body>
+<div>
+<h2></h2>
+<p></p>
+<p></p>
+</div>
+<script type="text/javascript">
+hash=window.location.hash.substr(1);
+dict=hash.substr(0,64).split("");
+title=hash.substr(64);
+document.title=title;
+var b64d
+console.group('Test Base64: ');
+//var b64 = Base64.encode();
+document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict));
+</script>
+</div>
+<div>
+</div>
+<p style="text-align:center">&copy;2017</p>
+<div style="display:none"><script src="https://s11.cnzz.com/z_stat.php?id=1255344758&web_id=1255344758" language="JavaScript"></script></div>
+</body>
+</html>
