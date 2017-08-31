@@ -1,9 +1,10 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'unsafe-eval' 'self' *.ctt.li localhost *.cnzz.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'unsafe-eval' 'self' *.ctt.li *.163.com localhost *.cnzz.com">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <script src="bb64.js"></script>
+<script src="bbdata.js"></script>
 <title>ctt.li</title>
 <style type="text/css">
 body{background-color:rgb(12,16,33);color:rgb(246,246,248);line-height:150%;}
@@ -11,20 +12,62 @@ h1 {text-align:center}
 h2 {font-weight:normal}
 h3 {font-weight:normal}
 td {text-align:center}
+a {color:rgb(246,246,248)}
 </style>
 </head>
 <body>
 <div>
 <h2></h2>
 <p></p>
+<p style="display:none">
+字典 <input size='64' type='text' value='' /><br />
+标题 <input size='64' type='text' value='' /><br />
+内容 <textarea rows='5' cols='64'></textarea><br />
+输出 <textarea rows='5' cols='64'></textarea><br />
+<span onclick='generate();'>生成</span><a href=''></a><br />
+</p>
 </div>
 <script type="text/javascript">
-hash=window.location.hash.substr(1);
-dict=hash.substr(0,64).split("");
-title=hash.substr(64);
-document.title=title;
-document.getElementsByTagName("h2")[0].innerHTML=title;
-document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict));
+reloadx();
+function reloadx(){
+    hash=window.location.hash.substr(1);
+    if (hash=="add"){
+    title="add";
+    document.getElementsByTagName("p")[1].style.display="inline";
+    document.getElementsByTagName("input")[0].value=getdict();
+    }
+    else{
+    dict=hash.substr(0,64).split("");
+    title=hash.substr(64);
+    document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict));
+    }
+    document.title=title;
+    document.getElementsByTagName("h2")[0].innerHTML=title;
+}
+window.onhashchange=function(){  
+    reloadx();
+};
+function getdict(){
+    var i,j,k,jk;
+    var bdc="ABIDEFGHCJKLMNOPQujTUVWXYZabcdefghiSklmnopqrstRvwxyz0123456789+/".split("");
+    for (i=0;i<666;i++){
+    j=Math.floor(Math.random()*(bdc.length-0)+0);
+    k=Math.floor(Math.random()*(bdc.length-0)+0);
+    jk=bdc[j];
+    bdc[j]=bdc[k];
+    bdc[k]=jk;
+    }
+    return bdc.join("");
+}
+function generate(){
+    var txsr=document.getElementsByTagName("textarea")[0].value;
+    txsr=txsr.replace(/\n/g,"<br />");
+    var dct=document.getElementsByTagName("input")[0].value.split("");
+    var hsh="#"+document.getElementsByTagName("input")[0].value+document.getElementsByTagName("input")[1].value;
+    document.getElementsByTagName("textarea")[1].innerHTML='"'+document.getElementsByTagName("input")[1].value+'":"'+Base64.encode(txsr,dct)+'",\n';
+    document.getElementsByTagName("a")[0].innerHTML=hsh;
+    document.getElementsByTagName("a")[0].href=hsh;
+}
 </script>
 </div>
 <div>
