@@ -18,31 +18,66 @@ a {color:rgb(246,246,248)}
 <body>
 <div>
 <h2></h2>
+<!--正文-->
 <p></p>
+<!--生成器-->
 <p style="display:none">
 字典 <input size='64' type='text' value='' /><br />
 标题 <input size='64' type='text' value='' /><br />
 内容 <textarea rows='5' cols='64'></textarea><br />
 输出 <textarea rows='5' cols='64'></textarea><br />
-<span onclick='generate();'>生成</span><a href=''></a><br />
+<button onclick='generate();'>生成</button><br />
+免密 <a href=''></a><br />
+安全 <a href=''></a>
+</p>
+<!--浏览器解密-->
+<p style="display:none">
+<input size='64' type='text' value='' /><br />
+<button onclick='degenerate();'>解密</button><br />
+</p>
+<!--404-->
+<p style="display:none">
+当前页面参数有误，请在网址#后输入正确的标题，然后输入字典解密，或者使用
+<a href='#gen'>生成器</a>。<br />
 </p>
 </div>
 <script type="text/javascript">
+var title;
 reloadx();
 function reloadx(){
     hash=window.location.hash.substr(1);
-    if (hash=="add"){
-    title="add";
+    document.getElementsByTagName("p")[1].style.display="none";
+    document.getElementsByTagName("p")[2].style.display="none";
+    document.getElementsByTagName("p")[3].style.display="none";
+    //生成加密
+    if (hash=="gen"){
+    title="生成器";
     document.getElementsByTagName("p")[1].style.display="inline";
     document.getElementsByTagName("input")[0].value=getdict();
     }
-    else{
+    //浏览器中解密
+    else if (bbase[String(hash)]!=undefined) {
+    title=hash;
+    document.getElementsByTagName("p")[2].style.display="inline";
+    
+    }
+    else
+    {
     dict=hash.substr(0,64).split("");
     title=hash.substr(64);
-    document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict));
+    //404
+    if (bbase[title]==undefined){
+        title="404";
+        document.getElementsByTagName("p")[3].style.display="inline";
+    }
+    //URL解密
+    else{
+        document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict));
+    }
     }
     document.title=title;
     document.getElementsByTagName("h2")[0].innerHTML=title;
+    
 }
 window.onhashchange=function(){  
     reloadx();
@@ -64,9 +99,18 @@ function generate(){
     txsr=txsr.replace(/\n/g,"<br />");
     var dct=document.getElementsByTagName("input")[0].value.split("");
     var hsh="#"+document.getElementsByTagName("input")[0].value+document.getElementsByTagName("input")[1].value;
+    var hsh0="#"+document.getElementsByTagName("input")[1].value;
     document.getElementsByTagName("textarea")[1].innerHTML='"'+document.getElementsByTagName("input")[1].value+'":"'+Base64.encode(txsr,dct)+'",\n';
     document.getElementsByTagName("a")[0].innerHTML=hsh;
     document.getElementsByTagName("a")[0].href=hsh;
+    document.getElementsByTagName("a")[1].innerHTML=hsh0;
+    document.getElementsByTagName("a")[1].href=hsh0;
+}
+function degenerate(){
+    var dict=document.getElementsByTagName("input")[2].value.split("");
+    document.getElementsByTagName("p")[0].innerHTML=(Base64.decode(bbase[title],dict))
+    document.getElementsByTagName("p")[2].style.display="none";
+    
 }
 </script>
 </div>
