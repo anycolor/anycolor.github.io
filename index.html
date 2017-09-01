@@ -3,11 +3,9 @@
 <meta charset='utf-8' />
 <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'unsafe-eval' 'self' *.iga.cc *.ctt.li *.163.com localhost *.cnzz.com">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<script src="aes_2.js"></script>
-<script src="bbdata.js"></script>
-<title></title>
+<title>tt</title>
 <style type="text/css">
-body{background-color:rgb(12,16,33);color:rgb(246,246,248);line-height:150%;}
+body{line-height:150%;}
 h1 {text-align:center}
 h2 {font-weight:normal}
 h3 {font-weight:normal}
@@ -16,140 +14,7 @@ a {color:rgb(246,246,248)}
 </style>
 </head>
 <body>
-<div>
-<h2></h2>
-<!--正文-->
-<p id='passage'></p>
-<!--生成器-->
-<p id='gen' style="display:none">
-密码 <input id='g-pass' size='20' type='text' value='' /><br />
-标题 <input id='g-title' size='20' type='text' value='' /><br />
-内容 <textarea id='g-content' rows='5' cols='50'></textarea><br />
-输出 <textarea id='g-output' rows='5' cols='50'></textarea><br />
-<button onclick='generate();'>生成</button><br />
-免密 <a href=''></a><br />
-安全 <a href=''></a><br />
-编辑 <a href=''></a>
-</p>
-<!--浏览器解密-->
-<p id='degen' style="display:none">
-<input id='d-pass' size='20' type='password' value='' /><br />
-<button onclick='degenerate();'>解密</button><br />
-</p>
-<!--404-->
-<p id='default' style="display:none"></p>
-</div>
-<script type="text/javascript">
-var title,soy="";
-reloadx();
-function reloadx(){
-    hash=decodeURI(window.location.hash.substr(1));
-    //设置为不可见
-    document.getElementById("passage").style.display="none";
-    document.getElementById("gen").style.display="none";
-    document.getElementById("degen").style.display="none";
-    document.getElementById("default").style.display="none";
-    //初始化变量
-    document.getElementById("default").innerHTML=cfg.default_content;
-    document.getElementsByTagName("a")[2].href=cfg.edit_link;
-    document.getElementsByTagName("a")[2].innerHTML=cfg.edit_link;
-    //生成加密 GEN
-    if (hash=="gen"){
-        title="生成器";
-        document.getElementById("gen").style.display="inline";
-        document.getElementById("g-pass").value=getpass();
-        }
-    //浏览器中解密 DEGEN
-    else if (bbase[String(hash)]!=undefined) {
-        title=hash;
-        var justtext;
-        try{justtext=Decrypt(bbase[title],"");}
-        catch(err){justtext="";}
-        //进行密码解密
-        if (justtext==""){
-            document.getElementById("degen").style.display="inline";
-        }
-        //直接解谜
-        else{
-            document.getElementById("passage").innerHTML=justtext;
-            document.getElementById("passage").style.display="inline";
-        }
-    }
-    else
-    {
-    title=hash.split("&")[0];
-    pwd=hash.split("&")[1];
-    //404 DEFAULT
-    if (bbase[title]==undefined){
-        title=cfg.default_title;
-        var tk=document.getElementById("default").innerHTML;
-        if (soy==""){
-            soy="<p><b>索引</b></p><ul>";
-            for (var jk in bbase){
-                //console.log(jk);
-                soy=soy+"<li><a href='#"+jk+"'>#"+jk+"</a></li>";
-            }
-            soy=soy+"</ul>"
-        }
-        document.getElementById("default").innerHTML=tk+soy;
-        document.getElementById("default").style.display="inline";
-    }
-    //URL解密 PASSAGE
-    else{
-        document.getElementById("passage").innerHTML=Decrypt(bbase[title],pwd);
-        document.getElementById("passage").style.display="inline";
-    }
-    }
-    document.title=title;
-    document.getElementsByTagName("h2")[0].innerHTML=title;
-    
-}
-window.onhashchange=function(){  
-    reloadx();
-};
-function getpass(){
-    var i,j,k,jk="";
-    var bdc="abcdefghijklmnopqrstuvwxyz".split("");
-    for (i=0;i<4;i++){
-        j=Math.floor(Math.random()*(bdc.length-0)+0);
-        jk=jk+bdc[j];
-    }
-    return jk;
-}
-function generate(){
-    var xcontent=document.getElementById("g-content").value;
-    //xcontent=xcontent.replace(/\n/g,"<br />");
-    xcontent="<p>"+xcontent.replace(/\n/g,"</p><p>")+"</p>";
-    var xpwd=document.getElementById("g-pass").value;
-    //var hsh="#"+document.getElementsByTagName("input")[0].value+document.getElementsByTagName("input")[1].value;
-    var xtitle=document.getElementById("g-title").value;
-    //console.log("ok");
-    //console.log(Encrypt(xcontent,xpwd));
-    //console.log('"'+document.getElementsByTagName("input")[1].value+'":"'+Encrypt(xcontent,xpwd)+'",\n');
-    document.getElementById("g-output").value='"'+xtitle+'":"'+Encrypt(xcontent,xpwd)+'",\n';
-    document.getElementsByTagName("a")[0].innerHTML="#"+xtitle+"&"+xpwd;
-    document.getElementsByTagName("a")[0].href="#"+xtitle+"&"+xpwd;
-    document.getElementsByTagName("a")[1].innerHTML="#"+xtitle;
-    document.getElementsByTagName("a")[1].href="#"+xtitle;
-}
-function degenerate(){
-    var pwd=document.getElementById("d-pass").value;
-    document.getElementById("passage").innerHTML=(Decrypt(bbase[title],pwd))
-    document.getElementById("passage").style.display="inline";
-    document.getElementById("degen").style.display="none";
-    
-}
-function Encrypt(word,pwd){
-return CryptoJS.AES.encrypt(word,pwd).toString();
-}
-function Decrypt(word,pwd){
-return CryptoJS.AES.decrypt(word,pwd).toString(CryptoJS.enc.Utf8);
-}
-</script>
-</div>
-<div>
-</div>
-<p style="text-align:center">&copy;2017</p>
+<img src="/assets/40.gif" width="100%" />
 <div style="display:none"><script src="https://s11.cnzz.com/z_stat.php?id=1255344758&web_id=1255344758" language="JavaScript"></script></div>
 </body>
 </html>
