@@ -19,75 +19,85 @@ a {color:rgb(246,246,248)}
 <div>
 <h2></h2>
 <!--正文-->
-<p></p>
+<p id='passage'></p>
 <!--生成器-->
-<p style="display:none">
-密码 <input size='20' type='text' value='' /><br />
-标题 <input size='20' type='text' value='' /><br />
-内容 <textarea rows='5' cols='50'></textarea><br />
-输出 <textarea rows='5' cols='50'></textarea><br />
+<p id='gen' style="display:none">
+密码 <input id='g-pass' size='20' type='text' value='' /><br />
+标题 <input id='g-title' size='20' type='text' value='' /><br />
+内容 <textarea id='g-content' rows='5' cols='50'></textarea><br />
+输出 <textarea id='g-output' rows='5' cols='50'></textarea><br />
 <button onclick='generate();'>生成</button><br />
 免密 <a href=''></a><br />
 安全 <a href=''></a><br />
-编辑 <a href='https://github.com/anycolor/anycolor.github.io/edit/master/date/bbdata.js'>GITHUB</a>
+编辑 <a href=''></a>
 </p>
 <!--浏览器解密-->
-<p style="display:none">
-<input size='20' type='password' value='' /><br />
+<p id='degen' style="display:none">
+<input id='d-pass' size='20' type='password' value='' /><br />
 <button onclick='degenerate();'>解密</button><br />
 </p>
 <!--404-->
-<p style="display:none">
-这儿的文章都是加密的哦。<br />请在网址<b>#</b>后输入正确的标题，然后输入密码查看。或者使用
-<a href='#gen'>生成器</a>。<br />
-</p>
+<p id='default' style="display:none"></p>
 </div>
 <script type="text/javascript">
 var title,soy="";
 reloadx();
 function reloadx(){
-    hash=decodeURI(window.location.hash.substr(1));
-    document.getElementsByTagName("p")[0].style.display="none";
-    document.getElementsByTagName("p")[1].style.display="none";
-    document.getElementsByTagName("p")[2].style.display="none";
-    document.getElementsByTagName("p")[3].style.display="none";
-    //生成加密
+    hash=decodeURI(window.location.hash.substr(cfg.hash_string.length));
+    //设置为不可见
+    document.getElementById("passage").style.display="none";
+    document.getElementById("gen").style.display="none";
+    document.getElementById("degen").style.display="none";
+    document.getElementById("default").style.display="none";
+    //初始化变量
+    document.getElementById("default").innerHTML=cfg.default_content;
+    document.getElementsByTagName("a")[2].href=cfg.edit_link;
+    document.getElementsByTagName("a")[2].innerHTML=cfg.edit_link;
+    //生成加密 GEN
     if (hash=="gen"){
-    title="生成器";
-    document.getElementsByTagName("p")[1].style.display="inline";
-    document.getElementsByTagName("input")[0].value=getpass();
-    }
-    //浏览器中解密
+        title="生成器";
+        document.getElementById("gen").style.display="inline";
+        document.getElementById("g-pass").value=getpass();
+        }
+    //浏览器中解密 DEGEN
     else if (bbase[String(hash)]!=undefined) {
-    //console.log(bbase[String(hash)]);
-    title=hash;
-    document.getElementsByTagName("p")[2].style.display="inline";
+        title=hash;
+        var justtext;
+        try{justtext=Decrypt(bbase[title],"");}
+        catch(err){justtext="";}
+        //进行密码解密
+        if (justtext==""){
+            document.getElementById("degen").style.display="inline";
+        }
+        //直接解谜
+        else{
+            document.getElementById("passage").innerHTML=justtext;
+            document.getElementById("passage").style.display="inline";
+        }
     }
     else
     {
     title=hash.split("&")[0];
     pwd=hash.split("&")[1];
-    //404
+    //404 DEFAULT
     if (bbase[title]==undefined){
-        console.log("err key",title);
-        title="秘密";
-        var tk=document.getElementsByTagName("p")[3].innerHTML;
+        title=cfg.default_title;
+        var tk=document.getElementById("default").innerHTML;
         if (soy==""){
-        soy="<p><b>索引</b></p><ul>";
-        for (var jk in bbase){
-            //console.log(jk);
-            soy=soy+"<li><a href='#"+jk+"'>#"+jk+"</a></li>";
+            soy="<p><b>索引</b></p><ul>";
+            for (var jk in bbase){
+                //console.log(jk);
+                soy=soy+"<li><a href='"+cfg.hash_string+jk+"'>"+jk+"</a></li>";
+            }
+            soy=soy+"</ul>"
         }
-        soy=soy+"</ul>"
-        tk=tk+soy;
-        }
-        document.getElementsByTagName("p")[3].innerHTML=tk;
-        document.getElementsByTagName("p")[3].style.display="inline";
+        document.getElementById("default").innerHTML=tk+soy;
+        document.getElementById("default").style.display="inline";
     }
-    //URL解密
+    //URL解密 PASSAGE
     else{
-        document.getElementsByTagName("p")[0].innerHTML=Decrypt(bbase[title],pwd);
-        document.getElementsByTagName("p")[0].style.display="inline";
+        document.getElementById("passage").innerHTML=Decrypt(bbase[title],pwd);
+        document.getElementById("passage").style.display="inline";
     }
     }
     document.title=title;
@@ -107,26 +117,26 @@ function getpass(){
     return jk;
 }
 function generate(){
-    var xcontent=document.getElementsByTagName("textarea")[0].value;
-    xcontent=xcontent.replace(/\n/g,"<br />");
-    var xpwd=document.getElementsByTagName("input")[0].value;
+    var xcontent=document.getElementById("g-content").value;
+    //xcontent=xcontent.replace(/\n/g,"<br />");
+    xcontent="<p>"+xcontent.replace(/\n/g,"</p><p>")+"</p>";
+    var xpwd=document.getElementById("g-pass").value;
     //var hsh="#"+document.getElementsByTagName("input")[0].value+document.getElementsByTagName("input")[1].value;
-    var hsh="#"+document.getElementsByTagName("input")[1].value+"&"+document.getElementsByTagName("input")[0].value;
-    var hsh0="#"+document.getElementsByTagName("input")[1].value;
+    var xtitle=document.getElementById("g-title").value;
     //console.log("ok");
     //console.log(Encrypt(xcontent,xpwd));
     //console.log('"'+document.getElementsByTagName("input")[1].value+'":"'+Encrypt(xcontent,xpwd)+'",\n');
-    document.getElementsByTagName("textarea")[1].value='"'+document.getElementsByTagName("input")[1].value+'":"'+Encrypt(xcontent,xpwd)+'",\n';
-    document.getElementsByTagName("a")[0].innerHTML=hsh;
-    document.getElementsByTagName("a")[0].href=hsh;
-    document.getElementsByTagName("a")[1].innerHTML=hsh0;
-    document.getElementsByTagName("a")[1].href=hsh0;
+    document.getElementById("g-output").value='"'+xtitle+'":"'+Encrypt(xcontent,xpwd)+'",\n';
+    document.getElementsByTagName("a")[0].innerHTML=xtitle+"&"+xpwd;
+    document.getElementsByTagName("a")[0].href=cfg.hash_string+xtitle+"&"+xpwd;
+    document.getElementsByTagName("a")[1].innerHTML=xtitle;
+    document.getElementsByTagName("a")[1].href=cfg.hash_string+xtitle;
 }
 function degenerate(){
-    var pwd=document.getElementsByTagName("input")[2].value;
-    document.getElementsByTagName("p")[0].innerHTML=(Decrypt(bbase[title],pwd))
-    document.getElementsByTagName("p")[2].style.display="none";
-    document.getElementsByTagName("p")[0].style.display="inline";
+    var pwd=document.getElementById("d-pass").value;
+    document.getElementById("passage").innerHTML=(Decrypt(bbase[title],pwd))
+    document.getElementById("passage").style.display="inline";
+    document.getElementById("degen").style.display="none";
     
 }
 function Encrypt(word,pwd){
