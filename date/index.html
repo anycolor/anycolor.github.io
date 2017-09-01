@@ -28,7 +28,8 @@ a {color:rgb(246,246,248)}
 输出 <textarea rows='5' cols='50'></textarea><br />
 <button onclick='generate();'>生成</button><br />
 免密 <a href=''></a><br />
-安全 <a href=''></a>
+安全 <a href=''></a><br />
+编辑 <a href='https://github.com/anycolor/anycolor.github.io/edit/master/date/bbdata.js'>GITHUB</a>
 </p>
 <!--浏览器解密-->
 <p style="display:none">
@@ -37,7 +38,7 @@ a {color:rgb(246,246,248)}
 </p>
 <!--404-->
 <p style="display:none">
-当前页面参数无效，请在网址#后输入正确的标题，然后输入密码。或者使用
+这儿的文章都是加密的哦。<br />请在网址<b>#</b>后输入正确的标题，然后输入密码查看。或者使用
 <a href='#gen'>生成器</a>。<br />
 </p>
 </div>
@@ -58,7 +59,7 @@ function reloadx(){
     }
     //浏览器中解密
     else if (bbase[String(hash)]!=undefined) {
-    console.log(bbase[String(hash)]);
+    //console.log(bbase[String(hash)]);
     title=hash;
     document.getElementsByTagName("p")[2].style.display="inline";
     }
@@ -69,12 +70,12 @@ function reloadx(){
     //404
     if (bbase[title]==undefined){
         console.log("err key",title);
-        title="404";
+        title="秘密";
         var tk=document.getElementsByTagName("p")[3].innerHTML;
         if (soy==""){
         soy="<p><b>索引</b></p><ul>";
         for (var jk in bbase){
-            console.log(jk);
+            //console.log(jk);
             soy=soy+"<li><a href='#"+jk+"'>#"+jk+"</a></li>";
         }
         tk=tk+soy;
@@ -111,9 +112,9 @@ function generate(){
     //var hsh="#"+document.getElementsByTagName("input")[0].value+document.getElementsByTagName("input")[1].value;
     var hsh="#"+document.getElementsByTagName("input")[1].value+"&"+document.getElementsByTagName("input")[0].value;
     var hsh0="#"+document.getElementsByTagName("input")[1].value;
-    console.log("ok");
-    console.log(Encrypt(xcontent,xpwd));
-    console.log('"'+document.getElementsByTagName("input")[1].value+'":"'+Encrypt(xcontent,xpwd)+'",\n');
+    //console.log("ok");
+    //console.log(Encrypt(xcontent,xpwd));
+    //console.log('"'+document.getElementsByTagName("input")[1].value+'":"'+Encrypt(xcontent,xpwd)+'",\n');
     document.getElementsByTagName("textarea")[1].value='"'+document.getElementsByTagName("input")[1].value+'":"'+Encrypt(xcontent,xpwd)+'",\n';
     document.getElementsByTagName("a")[0].innerHTML=hsh;
     document.getElementsByTagName("a")[0].href=hsh;
