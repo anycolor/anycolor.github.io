@@ -1,8 +1,8 @@
 var cfg={
     "default_title":"Date",
-    "default_content":"么么，这儿的文章，部分是加密的。<br />使用<a href='#!/gen'>生成器</a>。<br />",
+    "default_content":"么么，这儿的文章，部分是加密的。<br />使用<a href='#gen'>生成器</a>。<br />",
     "edit_link":"https://github.com/anycolor/anycolor.github.io/edit/master/date/bbdata.js",//https://github.com/anycolor/anycolor.github.io/edit/master/date/bbdata.js
-    "hash_string":"#!/",
+    "hash_string":"#",
 }
 var bbase={
     
